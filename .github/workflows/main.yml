@@ -4,13 +4,16 @@ on:
   push:
     branches:
       - main
-      - feature/lmartyr
+      - 'feature/lmartyr'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
       # Installe java 8 sur l'agent
       - name: Set up JDK 8
         uses: actions/setup-java@v2
